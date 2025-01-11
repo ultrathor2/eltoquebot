@@ -26,7 +26,7 @@ async def send_info(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await update.message.reply_text(info)
         else:
            await update.message.reply_text('Lo siento, en estos momentos no puedo mostrarte la información')
-    except requests.RequestsException as e:
+    except requests.RequestException as e:
         await update.message.reply_text(f'Error de la web: {e}')
     except Exception as e:
         await update.message.reply_text('Ocurrio un error: {e}')
